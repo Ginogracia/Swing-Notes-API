@@ -1,0 +1,76 @@
+### Register a new user
+POST http://localhost:3000/user/signup
+Content-Type: application/json
+
+{
+  "name": "gino",
+  "password": "supersecret"
+}
+
+###
+
+### Login as user
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+  "name": "gino",
+  "password": "supersecret"
+}
+
+###
+
+### Get all users
+GET http://localhost:3000/user/signup
+
+###
+
+### Delete all users
+DELETE http://localhost:3000/user/signup
+
+###
+
+### Create a new note (needs Authorization)
+POST http://localhost:3000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NmY2MjA5OC01MjA3LTQyNDYtOGU2ZS02MDBlZDkwOTNlZTIiLCJuYW1lIjoiZ2lubyIsImlhdCI6MTc0NjAxNjE1NCwiZXhwIjoxNzQ2MDI2OTU0fQ.eDEEe1w60rsKAeolCsbJDHQS9-fcfSRrUMpXfCorCVk
+Content-Type: application/json
+
+{
+  "title": "Test Note",
+  "text": "Buy milk, bread, eggs"
+}
+
+###
+
+### Update note by noteId and pass title and text.
+PUT http://localhost:3000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NmY2MjA5OC01MjA3LTQyNDYtOGU2ZS02MDBlZDkwOTNlZTIiLCJuYW1lIjoiZ2lubyIsImlhdCI6MTc0NjAxNjE1NCwiZXhwIjoxNzQ2MDI2OTU0fQ.eDEEe1w60rsKAeolCsbJDHQS9-fcfSRrUMpXfCorCVk
+Content-Type: application/json
+
+{
+  "noteId": "d0f39212-7a75-4552-bbdb-c54ebd91ed08",
+  "title": "Updated Title",
+  "text": "This is the new text for my note."
+}
+
+### Get all notes for logged-in user
+GET http://localhost:3000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NmY2MjA5OC01MjA3LTQyNDYtOGU2ZS02MDBlZDkwOTNlZTIiLCJuYW1lIjoiZ2lubyIsImlhdCI6MTc0NjAxNjE1NCwiZXhwIjoxNzQ2MDI2OTU0fQ.eDEEe1w60rsKAeolCsbJDHQS9-fcfSRrUMpXfCorCVk
+
+###
+
+### Delete a note (pass noteId in body)
+DELETE http://localhost:3000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NmY2MjA5OC01MjA3LTQyNDYtOGU2ZS02MDBlZDkwOTNlZTIiLCJuYW1lIjoiZ2lubyIsImlhdCI6MTc0NjAxNjE1NCwiZXhwIjoxNzQ2MDI2OTU0fQ.eDEEe1w60rsKAeolCsbJDHQS9-fcfSRrUMpXfCorCVk
+Content-Type: application/json
+
+{
+  "noteId": "6af2c77d-535b-45f5-b653-82d8df47c69c"
+}
+
+### Search for note with title in query
+
+GET http://localhost:3000/notes/search?title=Test Note
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NmY2MjA5OC01MjA3LTQyNDYtOGU2ZS02MDBlZDkwOTNlZTIiLCJuYW1lIjoiZ2lubyIsImlhdCI6MTc0NjAxNjE1NCwiZXhwIjoxNzQ2MDI2OTU0fQ.eDEEe1w60rsKAeolCsbJDHQS9-fcfSRrUMpXfCorCVk
+
+###
